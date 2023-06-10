@@ -1,0 +1,23 @@
+(deflisten timer :interval "1s" "./stopwatch.sh")
+
+(defwidget keqingwidget []
+(box :class "keqingbox"
+	:orientation "v"
+	:space-evenly false
+	:halign "fill"
+	:valign "fill"
+	:spacing 10
+(box)
+(image :class "keqinggif"
+	:halign "center"
+	:path "./keqing.gif")
+(label :class "keqingtime"
+	:interval "1s"
+	:text "You Keqinged for ${timer} seconds")))
+
+(defwindow keqing
+	:geometry (geometry :width "400px"
+						:height "400px")
+	:wm-ignore false
+	:windowtype "desktop"
+(keqingwidget))
